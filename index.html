@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programmier Tutorials</title>
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    
     <style>
         body {
             margin: 0;
@@ -25,7 +23,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 7px 37px 33px 15px rgba(0,0,0,0.64);
             margin-bottom: 80px;
         }
 
@@ -37,52 +34,46 @@
             padding: 20px;
         }
 
-        .video-item {
-            text-align: center;
+        /* Die Karten aus deinem Screenshot */
+        .video-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
             width: 350px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
         }
 
         iframe {
             border: none;
-            border-radius: 12px;
-            background-color: #1a1a1a;
-            box-shadow: 0px 4px 20px rgba(0,0,0,0.5);
+            width: 100%;
+            height: 200px;
+            background-color: #333;
         }
 
         h3 {
             color: #ff7f50;
-            margin-top: 15px;
-            margin-bottom: 5px;
+            margin: 20px 0 10px 0;
         }
 
         p {
             font-size: 14px;
-            opacity: 0.8;
+            padding: 0 20px;
+            line-height: 1.4;
+            opacity: 0.9;
         }
 
         .qr-section {
-            margin: 40px 0;
-            text-align: center;
+            margin-top: 50px;
             background: rgba(255, 255, 255, 0.05);
             padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: fit-content;
+            border-radius: 20px;
+            text-align: center;
         }
 
         .qr-image {
-            width: 180px;
-            height: auto;
-            border-radius: 10px;
+            width: 150px;
             margin-top: 15px;
-            transition: transform 0.3s ease;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .qr-image:hover {
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -91,28 +82,31 @@
     <header>Programmier Tutorials</header>
 
     <div class="video-container">
-        <div class="video-item">
-            <iframe width="350" height="200" src="https://www.youtube.com" title="Tutorial 1" allowfullscreen></iframe>
+        <!-- Video 1 -->
+        <div class="video-card">
+            <iframe src="https://www.youtube.com" allowfullscreen></iframe>
             <h3>HTML & CSS Basics</h3>
-            <p>Lerne die Grundlagen der Webentwicklung von Anfang an.</p>
+            <p>Lerne die Grundlagen der Webentwicklung von Anfang an</p>
         </div>
 
-        <div class="video-item">
-            <iframe width="350" height="200" src="https://www.youtube.com" title="Tutorial 2" allowfullscreen></iframe>
+        <!-- Video 2 -->
+        <div class="video-card">
+            <iframe src="https://www.youtube.com" allowfullscreen></iframe>
             <h3>JavaScript Einstieg</h3>
-            <p>Verstehe Logik und Funktionen in der Programmierung.</p>
+            <p>Verstehe Logik und Funktionen in der Programmierung</p>
         </div>
 
-        <div class="video-item">
-            <iframe width="350" height="200" src="https://www.youtube.com" title="Tutorial 3" allowfullscreen></iframe>
+        <!-- Video 3 (Neu hinzugefügt) -->
+        <div class="video-card">
+            <iframe src="https://www.youtube.com" allowfullscreen></iframe>
             <h3>KI Chatbot erstellen</h3>
-            <p>Baue deinen eigenen Chatbot mit JavaScript und OpenAI API.</p>
+            <p>Baue deinen eigenen Chatbot mit JavaScript und OpenAI API</p>
         </div>
     </div>
 
     <div class="qr-section">
-        <p>Scanne den Code für mehr Infos:</p>
-        <img src="qr-code.png" alt="QR Code" class="qr-image">
+        <p>Scanne den Code für mehr Infos.</p>
+        <img src="qr-code.png" class="qr-image" alt="QR Code">
     </div>
 
 </body>
