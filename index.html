@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programmier Tutorials</title>
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    
     <style>
         body {
             margin: 0;
@@ -25,49 +23,75 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 7px 37px 33px 15px rgba(0,0,0,0.64);
-            margin-bottom: 80px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 50px;
         }
 
+        /* Video Container als Grid für Responsivität */
         .video-container {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
-            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1200px;
             padding: 20px;
         }
 
-        iframe {
-            border: none;
-            border-radius: 12px;
-            background-color: #1a1a1a;
-            box-shadow: 0px 4px 20px rgba(0,0,0,0.5);
+        /* Video Card Design */
+        .video-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.8);
+            border-color: #ff7f50; /* Akzentfarbe bei Hover */
+        }
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+        }
+
+        .video-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .video-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            color: #ff7f50;
+        }
+
+        .video-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* QR-Sektion */
         .qr-section {
-            margin: 40px 0;
+            margin: 60px 0;
             text-align: center;
             background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            width: fit-content;
         }
 
         .qr-image {
-            width: 180px;
-            height: auto;
+            width: 150px;
             border-radius: 10px;
-            margin-top: 15px;
             transition: transform 0.3s ease;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .qr-image:hover {
-            transform: scale(1.1);
-        }
+        .qr-image:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
@@ -75,31 +99,40 @@
     <header>Programmier Tutorials</header>
 
     <div class="video-container">
-        <!-- Das erste Video -->
-        <iframe width="350" height="200" 
-            src="https://www.youtube.com/embed/RGeP7iBLNZA?si=0XXI4X1VKggcHj1q" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-        </iframe>
+        <!-- Video 1 -->
+        <div class="video-card">
+            <iframe src="https://www.youtube.com" title="Tutorial 1" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>HTML & CSS Basics</h3>
+                <p>Lerne die Grundlagen der Webentwicklung von Anfang an.</p>
+            </div>
+        </div>
 
-        <!-- Das zweite Video -->
-        <iframe width="350" height="200" 
-            src="https://www.youtube.com/embed/I84aQhbJl_Y?si=2e5IW18tKbFR27Sx" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-        </iframe>
+        <!-- Video 2 -->
+        <div class="video-card">
+            <iframe src="https://www.youtube.com" title="Tutorial 2" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>JavaScript Einstieg</h3>
+                <p>Verstehe Logik und Funktionen in der Programmierung.</p>
+            </div>
+        </div>
+
+        <!-- Video 3: Das neue Video -->
+        <div class="video-card">
+            <iframe src="https://www.youtube.com" title="Chatbot Tutorial" allowfullscreen></iframe>
+            <div class="video-info">
+                <h3>KI Chatbot erstellen</h3>
+                <p>Baue deinen eigenen Chatbot mit JavaScript und OpenAI API.</p>
+            </div>
+        </div>
     </div>
 
     <div class="qr-section">
         <p>Scanne den Code für mehr Infos:</p>
-        <!-- WICHTIG: Die Datei muss EXAKT qr-code.jpg heißen und im selben Ordner liegen -->
-        <img src="qr-code.png" alt="https://127.0.0.1:5500/index.html" class="qr-image">
-
+        <!-- Tipp: Nutze einen Generator wie https://www.qrcode-generator.de -->
+        <img src="qr-code.png" alt="QR Code Link" class="qr-image">
     </div>
 
 </body>
 </html>
+
